@@ -1,13 +1,8 @@
 # ninja log v7
-3	3123	7865517529663476	CMakeFiles/grid_watcher_benchmark.dir/src/benchmark.cpp.obj	6f5d3c5f15d66dd9
-3127	6579	7865517560862813	D:/Project/grid-watcher/bin/grid_watcher_benchmark.exe	50ab4acecb5ae59a
-27	3002	7865517779023595	CMakeFiles/grid_watcher_demo.dir/src/main.cpp.obj	20e021c6d6e0ced3
-34	3281	7865517779084681	CMakeFiles/grid_watcher.dir/src/cli_main.cpp.obj	1e5d54f6f2c85118
-3002	6075	7865517808777462	D:/Project/grid-watcher/bin/grid_watcher_demo.exe	4153a1b467fe6bb2
-3281	6354	7865517811552549	D:/Project/grid-watcher/bin/grid_watcher.exe	b7fc303dd161f519
-19	3226	7865520423953402	CMakeFiles/grid_watcher_demo.dir/src/demo.cpp.obj	13f6a20bc56e9793
 27	3419	7865520424021141	CMakeFiles/grid_watcher_benchmark.dir/src/benchmark.cpp.obj	6f5d3c5f15d66dd9
-3227	4953	7865520456030951	D:/Project/grid-watcher/bin/grid_watcher_demo.exe	edcd783cd760ecf7
 3422	5152	7865520457980339	D:/Project/grid-watcher/bin/grid_watcher_benchmark.exe	50ab4acecb5ae59a
-7	3222	7865522135714115	CMakeFiles/grid_watcher.dir/src/cli_main.cpp.obj	1e5d54f6f2c85118
-3223	4775	7865522167869429	D:/Project/grid-watcher/bin/grid_watcher.exe	b7fc303dd161f519
+27	3002	7865517779023595	CMakeFiles/grid_watcher_demo.dir/src/main.cpp.obj	20e021c6d6e0ced3
+28	2721	7865578256852358	CMakeFiles/grid_watcher.dir/src/cli_main.cpp.obj	1e5d54f6f2c85118
+3227	4953	7865520456030951	D:/Project/grid-watcher/bin/grid_watcher_demo.exe	edcd783cd760ecf7
+2722	4008	7865578283790173	D:/Project/grid-watcher/bin/grid_watcher.exe	b7fc303dd161f519
+19	3226	7865520423953402	CMakeFiles/grid_watcher_demo.dir/src/demo.cpp.obj	13f6a20bc56e9793
