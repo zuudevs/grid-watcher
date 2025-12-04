@@ -21,6 +21,19 @@
 
 using namespace gw;
 
+void SetupConsole() {
+    // Set output ke UTF-8 biar garis-garisnya nyambung
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    // Aktifkan ANSI Escape Sequences (biar bisa warna-warni & pindah kursor)
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD dwMode = 0;
+    GetConsoleMode(hOut, &dwMode);
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    SetConsoleMode(hOut, dwMode);
+}
+
 // ============================================================================
 // Global State
 // ============================================================================
@@ -149,8 +162,8 @@ public:
         std::cout << R"(
 ╔═══════════════════════════════════════════════════════════════════════╗
 ║                                                                       ║
-║              GRID-WATCHER v3.0 - Production Release                  ║
-║        Ultra-Fast Multi-Threaded SCADA Security Monitor              ║
+║              GRID-WATCHER v3.0 - Production Release                   ║
+║        Ultra-Fast Multi-Threaded SCADA Security Monitor               ║
 ║                                                                       ║
 ║  ⚡ Multi-threaded packet processing                                  ║
 ║  🛡️  Real-time threat detection & mitigation                          ║
@@ -283,6 +296,8 @@ void optimizeSystemSettings() {
 // Main Application
 // ============================================================================
 int main(int argc, char* argv[]) {
+	SetupConsole() ;
+
     try {
         // Parse command-line arguments
         AppConfig config;

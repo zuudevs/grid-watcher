@@ -70,8 +70,8 @@ if(COMPILER_IS_GCC_OR_CLANG)
         -fstrict-aliasing           # Strict aliasing rules
         -fvisibility=hidden         # Hide symbols by default
         -ftree-vectorize            # Auto-vectorization
-        -fno-exceptions             # Disable exceptions (optional)
         -fno-rtti                   # Disable RTTI (optional)
+		-D_CRT_SECURE_NO_WARNINGS
     )
     
     # Native architecture optimization
@@ -244,7 +244,7 @@ set(ALL_HEADERS
 # Main Executable (Demo)
 # ============================================================================
 add_executable(grid_watcher_demo
-    src/main.cpp
+    src/demo.cpp
     ${ALL_HEADERS}
 )
 

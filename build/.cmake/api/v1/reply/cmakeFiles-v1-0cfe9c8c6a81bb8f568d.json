@@ -140,6 +140,24 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "D:/dev-tools/CMake/share/cmake-4.2/Modules/Platform/Linker/Windows-MSVC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/dev-tools/CMake/share/cmake-4.2/Modules/CPack.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/dev-tools/CMake/share/cmake-4.2/Modules/CPackComponent.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/dev-tools/CMake/share/cmake-4.2/Templates/CPackConfig.cmake.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/dev-tools/CMake/share/cmake-4.2/Templates/CPackConfig.cmake.in"
 		}
 	],
 	"kind" : "cmakeFiles",

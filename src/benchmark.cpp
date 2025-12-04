@@ -1,5 +1,5 @@
 // ============================================================================
-// Grid-Watcher v3.0 - Performance Benchmark Suite
+// Grid-Watcher v3.0 - Performance Benchmark Suite (FIXED)
 // ============================================================================
 
 #include "grid_watcher/grid_watcher.hpp"
@@ -13,6 +13,19 @@
 
 using namespace gw;
 using namespace std::chrono;
+
+void SetupConsole() {
+    // Set output ke UTF-8 biar garis-garisnya nyambung
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    // Aktifkan ANSI Escape Sequences (biar bisa warna-warni & pindah kursor)
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD dwMode = 0;
+    GetConsoleMode(hOut, &dwMode);
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    SetConsoleMode(hOut, dwMode);
+}
 
 // ============================================================================
 // Benchmark Utilities
@@ -37,16 +50,20 @@ public:
 };
 
 // ============================================================================
-// Test Data Generator
+// Test Data Generator (FIXED: Use proper random int types)
 // ============================================================================
 class TestDataGenerator {
 private:
     std::mt19937 rng_;
-    std::uniform_int_distribution<uint8_t> byte_dist_;
+    std::uniform_int_distribution<unsigned int> byte_dist_;  // FIXED: Use unsigned int instead of uint8_t
     std::uniform_int_distribution<uint16_t> port_dist_;
     
 public:
-    TestDataGenerator() : rng_(std::random_device{}()) {}
+    TestDataGenerator() 
+        : rng_(std::random_device{}())
+        , byte_dist_(0, 255)  // Range for bytes
+        , port_dist_(1024, 65535)
+    {}
     
     std::vector<std::byte> generateModbusPacket(size_t size = 64) {
         std::vector<std::byte> packet;
@@ -70,7 +87,7 @@ public:
         
         // Fill remaining bytes
         while (packet.size() < size) {
-            packet.push_back(std::byte(byte_dist_(rng_)));
+            packet.push_back(std::byte(static_cast<uint8_t>(byte_dist_(rng_))));
         }
         
         return packet;
@@ -78,10 +95,10 @@ public:
     
     net::ipv4 randomIP() {
         return net::ipv4({
-            byte_dist_(rng_),
-            byte_dist_(rng_),
-            byte_dist_(rng_),
-            byte_dist_(rng_)
+            static_cast<uint8_t>(byte_dist_(rng_)),
+            static_cast<uint8_t>(byte_dist_(rng_)),
+            static_cast<uint8_t>(byte_dist_(rng_)),
+            static_cast<uint8_t>(byte_dist_(rng_))
         });
     }
     
@@ -227,7 +244,7 @@ void benchmarkThroughput() {
 }
 
 // ============================================================================
-// Multi-Threaded Benchmarks
+// Multi-Threaded Benchmarks (FIXED: Remove unused capture)
 // ============================================================================
 void benchmarkMultiThreaded() {
     std::cout << "\n=== MULTI-THREADED PERFORMANCE ===\n\n";
@@ -245,14 +262,14 @@ void benchmarkMultiThreaded() {
         processor.start();
         
         constexpr int PACKETS_PER_THREAD = 10000;
-        const int TOTAL_PACKETS = PACKETS_PER_THREAD * num_threads;
+        const int TOTAL_PACKETS = static_cast<int>(PACKETS_PER_THREAD * num_threads);
         
         auto start = high_resolution_clock::now();
         
         // Submit packets from multiple threads
         std::vector<std::thread> submitters;
         for (size_t t = 0; t < num_threads; ++t) {
-            submitters.emplace_back([&, t]() {
+            submitters.emplace_back([&]() {  // FIXED: Removed unused capture 't'
                 TestDataGenerator local_gen;
                 for (int i = 0; i < PACKETS_PER_THREAD; ++i) {
                     auto packet = local_gen.generateModbusPacket();
@@ -271,7 +288,7 @@ void benchmarkMultiThreaded() {
         }
         
         // Wait for processing to complete
-        while (processor.getStats().packets_processed < TOTAL_PACKETS) {
+        while (static_cast<int>(processor.getStats().packets_processed) < TOTAL_PACKETS) {
             std::this_thread::sleep_for(milliseconds(10));
         }
         
@@ -298,9 +315,6 @@ void benchmarkMemoryUsage() {
     
     auto config = scada::DetectionConfig::createDefault();
     
-    // Measure initial memory
-    auto initial_memory = 0; // In production, use getrusage()
-    
     {
         scada::GridWatcher watcher(config, "benchmark.log");
         watcher.start();
@@ -326,7 +340,7 @@ void benchmarkMemoryUsage() {
 }
 
 // ============================================================================
-// Scalability Benchmarks
+// Scalability Benchmarks (FIXED: Use std::min for correct types)
 // ============================================================================
 void benchmarkScalability() {
     std::cout << "\n=== SCALABILITY ===\n\n";
@@ -340,7 +354,10 @@ void benchmarkScalability() {
         
         auto start = high_resolution_clock::now();
         
-        for (size_t i = 0; i < packet_rate && i < 1000000; ++i) {
+        // FIXED: Use proper types for std::min
+        size_t test_count = (std::min)(packet_rate, static_cast<size_t>(1000000));
+        
+        for (size_t i = 0; i < test_count; ++i) {
             auto packet = gen.generateModbusPacket();
             watcher.processPacket(packet, gen.randomIP(), gen.randomIP(), 5000, 502);
         }
@@ -349,7 +366,7 @@ void benchmarkScalability() {
         auto duration = duration_cast<milliseconds>(end - start).count();
         
         if (duration > 0) {
-            double actual_pps = (std::min(packet_rate, 1000000UL) * 1000.0) / duration;
+            double actual_pps = (test_count * 1000.0) / duration;
             std::cout << "Target " << std::setw(8) << packet_rate << " pps:  "
                       << "Achieved " << std::fixed << std::setprecision(2) 
                       << actual_pps << " pps\n";
@@ -364,7 +381,8 @@ void benchmarkScalability() {
 // ============================================================================
 // Main Benchmark Runner
 // ============================================================================
-int main(int argc, char* argv[]) {
+int main() {
+	SetupConsole() ;
     std::cout << R"(
 ╔═══════════════════════════════════════════════════════════════════╗
 ║                                                                   ║

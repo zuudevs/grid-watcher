@@ -6,28 +6,36 @@
 #include <vector>
 #include <atomic>
 #include <memory>
-#include <barrier>
 
 namespace gw::processing {
 
 // ============================================================================
-// Packet Processing Job
+// Packet Processing Job (FIXED: Removed atomic to allow copy/move)
 // ============================================================================
 struct PacketJob {
-	std::chrono::steady_clock::time_point received_at;
+    std::chrono::steady_clock::time_point received_at;
     std::vector<std::byte> data;
     net::ipv4 source_ip;
     net::ipv4 dest_ip;
     uint16_t source_port;
     uint16_t dest_port;
     
-    // Result
-    std::atomic<bool> processed{false};
-    std::atomic<bool> allowed{true};
+    // Result - changed to regular bool for copyability
+    bool processed{false};
+    bool allowed{true};
+    
+    // Default constructor
+    PacketJob() = default;
+    
+    // Allow copy and move
+    PacketJob(const PacketJob&) = default;
+    PacketJob(PacketJob&&) noexcept = default;
+    PacketJob& operator=(const PacketJob&) = default;
+    PacketJob& operator=(PacketJob&&) noexcept = default;
 };
 
 // ============================================================================
-// Lock-Free Packet Queue (MPMC)
+// Lock-Free Packet Queue (MPMC) - FIXED
 // ============================================================================
 template<size_t Capacity>
 class PacketQueue {
@@ -35,6 +43,8 @@ private:
     struct Slot {
         std::atomic<uint64_t> sequence{0};
         PacketJob job;
+        
+        Slot() : sequence(0) {}
     };
     
     std::vector<Slot> slots_;
@@ -48,7 +58,7 @@ public:
         }
     }
     
-    bool enqueue(PacketJob&& job) noexcept {
+    bool enqueue(PacketJob job) noexcept {  // Pass by value to allow move
         uint64_t pos = enqueue_pos_.load(std::memory_order_relaxed);
         
         for (;;) {
@@ -59,7 +69,7 @@ public:
             if (diff == 0) {
                 if (enqueue_pos_.compare_exchange_weak(pos, pos + 1, 
                     std::memory_order_relaxed)) {
-                    slot.job = std::move(job);
+                    slot.job = std::move(job);  // Move instead of assignment
                     slot.sequence.store(pos + 1, std::memory_order_release);
                     return true;
                 }
@@ -82,7 +92,7 @@ public:
             if (diff == 0) {
                 if (dequeue_pos_.compare_exchange_weak(pos, pos + 1, 
                     std::memory_order_relaxed)) {
-                    job = std::move(slot.job);
+                    job = std::move(slot.job);  // Move instead of assignment
                     slot.sequence.store(pos + Capacity, std::memory_order_release);
                     return true;
                 }
@@ -155,7 +165,7 @@ public:
     }
     
     // Submit packet for processing (non-blocking)
-    bool submitPacket(std::vector<std::byte>&& data,
+    bool submitPacket(std::vector<std::byte> data,
                      const net::ipv4& src_ip,
                      const net::ipv4& dst_ip,
                      uint16_t src_port,
@@ -194,7 +204,7 @@ public:
     }
     
 private:
-    void workerThread(size_t worker_id) {
+    void workerThread([[maybe_unused]] size_t worker_id) {
         // Set thread name for debugging
         #ifdef __linux__
         std::string name = "gw-worker-" + std::to_string(worker_id);
@@ -214,8 +224,8 @@ private:
                     job.dest_port
                 );
                 
-                job.allowed.store(allowed, std::memory_order_release);
-                job.processed.store(true, std::memory_order_release);
+                job.allowed = allowed;
+                job.processed = true;
                 
                 packets_processed_.fetch_add(1, std::memory_order_relaxed);
             } else {
@@ -260,7 +270,7 @@ public:
         }
     }
     
-    bool submitBatch(std::vector<PacketJob>&& jobs) {
+    bool submitBatch(std::vector<PacketJob> jobs) {
         if (jobs.size() > BATCH_SIZE) return false;
         
         Batch batch;
@@ -288,8 +298,8 @@ private:
                         job.source_port,
                         job.dest_port
                     );
-                    job.allowed.store(allowed, std::memory_order_release);
-                    job.processed.store(true, std::memory_order_release);
+                    job.allowed = allowed;
+                    job.processed = true;
                 }
             } else {
                 std::this_thread::yield();

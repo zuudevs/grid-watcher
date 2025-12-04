@@ -1,0 +1,414 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "D:/Project/grid-watcher/bin/grid_watcher_benchmark.exe"
+		},
+		{
+			"path" : "D:/Project/grid-watcher/bin/grid_watcher_benchmark.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"target_compile_options",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 279,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 289,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 284,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 145,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 165,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -clang:-std=c++23 -MDd -flto=thin"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-c++98-compat"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-c++98-compat-pedantic"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-sign-conversion"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-c++11-narrowing"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-padded"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-O3"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-ffast-math"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-funroll-loops"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-finline-functions"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fstrict-aliasing"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-ftree-vectorize"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-D_CRT_SECURE_NO_WARNINGS"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-march=native"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-mtune=native"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-mavx2"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-mfma"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-mbmi"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-mbmi2"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-flto"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "_WIN32_WINNT=0x0601"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "D:/Project/grid-watcher/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "23"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "grid_watcher_benchmark::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -flto=thin",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 -flto /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "ws2_32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX",
+		"lto" : true
+	},
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"fragment" : "ws2_32"
+		}
+	],
+	"name" : "grid_watcher_benchmark",
+	"nameOnDisk" : "grid_watcher_benchmark.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/benchmark.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/core/ipv4.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/core/socket_address.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/core/socket_base.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/core/tcp_socket.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/meta/arithmetic.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/utils/convert.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/utils/clamp.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/utils/subnet.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/scada/types.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/scada/config.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/scada/modbus_parser.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/scada/behavioral_analyzer.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/scada/mitigation_engine.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/performance/lock_free.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/performance/fast_hash.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/performance/bloom_filter.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/performance/cache_utils.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/monitor/logger.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/monitor/statistics.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/monitor/metrics.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/processing/packet_processor.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/web/web_server.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/grid_watcher/grid_watcher.hpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}

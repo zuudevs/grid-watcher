@@ -6,3 +6,18 @@
 2025-12-04 15:30:31 [WARNING] [Mitigation] Mitigation: BLOCK_IP for 203.0.113.45 due to Unauthorized Write
 2025-12-04 15:30:46 [INFO] [Monitor] Stats: 2110 pkts (70.3 pps) | 2 threats (4.00/min) | Latency: 2.18 μs | 0 active blocks
 2025-12-04 15:30:50 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-04 18:43:59 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-04 18:43:59 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-04 18:44:10 [CRITICAL] [ThreatDetector] Port scan detected | Attack: Port Scan | Severity: HIGH | Source: 10.0.0.50 | Confidence: 90.00%
+2025-12-04 18:44:10 [WARNING] [Mitigation] Mitigation: BLOCK_IP for 10.0.0.50 due to Port Scan
+2025-12-04 18:44:15 [CRITICAL] [ThreatDetector] Unauthorized write to critical register | Attack: Unauthorized Write | Severity: CRITICAL | Source: 203.0.113.45 | Confidence: 90.00%
+2025-12-04 18:44:15 [WARNING] [Mitigation] Mitigation: BLOCK_IP for 203.0.113.45 due to Unauthorized Write
+2025-12-04 18:44:29 [INFO] [Monitor] Stats: 2110 pkts (70.3 pps) | 2 threats (4.00/min) | Latency: 2.48 μs | 0 active blocks
+2025-12-04 18:44:34 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-04 18:47:27 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-04 18:47:27 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-04 18:47:37 [CRITICAL] [ThreatDetector] Port scan detected | Attack: Port Scan | Severity: HIGH | Source: 10.0.0.50 | Confidence: 90.00%
+2025-12-04 18:47:37 [WARNING] [Mitigation] Mitigation: BLOCK_IP for 10.0.0.50 due to Port Scan
+2025-12-04 18:47:42 [CRITICAL] [ThreatDetector] Unauthorized write to critical register | Attack: Unauthorized Write | Severity: CRITICAL | Source: 203.0.113.45 | Confidence: 90.00%
+2025-12-04 18:47:42 [WARNING] [Mitigation] Mitigation: BLOCK_IP for 203.0.113.45 due to Unauthorized Write
+2025-12-04 18:47:54 [INFO] [GridWatcher] Stopping Grid-Watcher...
