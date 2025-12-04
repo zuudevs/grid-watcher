@@ -14,12 +14,12 @@ namespace gw::processing {
 // Packet Processing Job
 // ============================================================================
 struct PacketJob {
+	std::chrono::steady_clock::time_point received_at;
     std::vector<std::byte> data;
     net::ipv4 source_ip;
     net::ipv4 dest_ip;
     uint16_t source_port;
     uint16_t dest_port;
-    std::chrono::steady_clock::time_point received_at;
     
     // Result
     std::atomic<bool> processed{false};
