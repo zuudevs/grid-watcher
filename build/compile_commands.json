@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Project/grid-watcher/build",
+  "command": "D:\\dev-tools\\LLVM\\bin\\clang-cl.exe  /nologo -TP -D_WIN32_WINNT=0x0601 -ID:\\Project\\grid-watcher\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -clang:-std=c++23 -MDd -flto=thin -Wall -Wextra -Wpedantic -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-sign-conversion -Wno-c++11-narrowing -g -O0 /FoCMakeFiles\\grid_watcher.dir\\src\\main.cpp.obj /FdCMakeFiles\\grid_watcher.dir\\ -c -- D:\\Project\\grid-watcher\\src\\main.cpp",
+  "file": "D:/Project/grid-watcher/src/main.cpp",
+  "output": "D:/Project/grid-watcher/build/CMakeFiles/grid_watcher.dir/src/main.cpp.obj"
+}
+]
