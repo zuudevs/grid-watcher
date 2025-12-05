@@ -529,8 +529,8 @@ if (!config.isValid()) {
 
 High-performance async logger.
 
-**Header**: `include/zuu/monitoring/logger.hpp`  
-**Namespace**: `gw::monitoring`
+**Header**: `include/zuu/captureing/logger.hpp`  
+**Namespace**: `gw::captureing`
 
 #### Constructor
 
@@ -619,8 +619,8 @@ uint64_t getLogsDropped() const noexcept
 
 Performance statistics tracker.
 
-**Header**: `include/zuu/monitoring/statistics.hpp`  
-**Namespace**: `gw::monitoring`
+**Header**: `include/zuu/captureing/statistics.hpp`  
+**Namespace**: `gw::captureing`
 
 #### Methods
 
@@ -673,8 +673,8 @@ Resets all statistics to zero.
 
 Advanced performance metrics.
 
-**Header**: `include/zuu/monitoring/metrics.hpp`  
-**Namespace**: `gw::monitoring`
+**Header**: `include/zuu/captureing/metrics.hpp`  
+**Namespace**: `gw::captureing`
 
 #### LatencyTracker
 
@@ -911,7 +911,7 @@ int main() {
     
     // Configure logger
     auto& logger = watcher.getLogger();
-    logger.setMinLevel(gw::monitoring::LogEntry::Level::INFO);
+    logger.setMinLevel(gw::captureing::LogEntry::Level::INFO);
     
     // Start monitoring
     watcher.start();

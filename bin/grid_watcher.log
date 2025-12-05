@@ -112,3 +112,34 @@
 2025-12-04 21:00:04 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
 2025-12-04 21:00:34 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
 2025-12-04 21:00:44 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-05 08:49:09 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-05 08:49:09 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-05 08:49:09 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-05 08:50:52 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-05 08:50:52 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-05 08:50:52 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-05 13:22:17 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-05 13:22:17 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-05 13:22:17 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-05 13:26:06 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-05 13:26:06 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-05 13:26:06 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-05 13:53:26 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-05 13:53:26 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-05 13:53:26 [INFO] [GridWatcher] Stopping Grid-Watcher...
+2025-12-05 13:56:22 [INFO] [GridWatcher] Grid-Watcher initialized successfully
+2025-12-05 13:56:22 [INFO] [GridWatcher] Grid-Watcher started - Monitoring SCADA network
+2025-12-05 13:56:52 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 13:57:22 [INFO] [Cleanup] Periodic cleanup completed
+2025-12-05 13:57:22 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 13:57:52 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 13:58:22 [INFO] [Cleanup] Periodic cleanup completed
+2025-12-05 13:58:22 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 13:58:52 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 13:59:22 [INFO] [Cleanup] Periodic cleanup completed
+2025-12-05 13:59:22 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 13:59:52 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 14:00:22 [INFO] [Cleanup] Periodic cleanup completed
+2025-12-05 14:00:22 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 14:00:52 [INFO] [Monitor] Stats: 0 pkts (0.0 pps) | 0 threats (0.00/min) | Latency: 0.00 μs | 0 active blocks
+2025-12-05 14:01:21 [INFO] [GridWatcher] Stopping Grid-Watcher...

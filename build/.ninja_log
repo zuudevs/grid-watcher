@@ -1,8 +1,7 @@
 # ninja log v7
 27	3419	7865520424021141	CMakeFiles/grid_watcher_benchmark.dir/src/benchmark.cpp.obj	6f5d3c5f15d66dd9
 3422	5152	7865520457980339	D:/Project/grid-watcher/bin/grid_watcher_benchmark.exe	50ab4acecb5ae59a
-27	3002	7865517779023595	CMakeFiles/grid_watcher_demo.dir/src/main.cpp.obj	20e021c6d6e0ced3
-28	2721	7865578256852358	CMakeFiles/grid_watcher.dir/src/cli_main.cpp.obj	1e5d54f6f2c85118
 3227	4953	7865520456030951	D:/Project/grid-watcher/bin/grid_watcher_demo.exe	edcd783cd760ecf7
-2722	4008	7865578283790173	D:/Project/grid-watcher/bin/grid_watcher.exe	b7fc303dd161f519
+4143	6427	7866023773115883	D:/Project/grid-watcher/bin/grid_watcher.exe	a5baba9fecee09f6
 19	3226	7865520423953402	CMakeFiles/grid_watcher_demo.dir/src/demo.cpp.obj	13f6a20bc56e9793
+25	4141	7866023731985213	CMakeFiles/grid_watcher.dir/src/grid_watcher.cpp.obj	7cae8acf433ef964

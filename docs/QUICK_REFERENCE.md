@@ -44,9 +44,9 @@ auto stats = watcher.getStatistics();
 | Modify Modbus parsing | `modbus_parser.hpp` | `include/zuu/scada/` |
 | Add detection algorithm | `behavioral_analyzer.hpp` | `include/zuu/scada/` |
 | Change mitigation logic | `mitigation_engine.hpp` | `include/zuu/scada/` |
-| Adjust logging behavior | `logger.hpp` | `include/zuu/monitoring/` |
-| Add performance counters | `statistics.hpp` | `include/zuu/monitoring/` |
-| Create new metrics | `metrics.hpp` | `include/zuu/monitoring/` |
+| Adjust logging behavior | `logger.hpp` | `include/zuu/captureing/` |
+| Add performance counters | `statistics.hpp` | `include/zuu/captureing/` |
+| Create new metrics | `metrics.hpp` | `include/zuu/captureing/` |
 | Modify main engine logic | `grid_watcher.hpp` | `include/zuu/` |
 | Update demo scenarios | `main.cpp` | `src/` |
 
@@ -131,7 +131,7 @@ struct DetectionConfig {
 
 ### Add Custom Metrics
 
-**File:** `include/zuu/monitoring/metrics.hpp`
+**File:** `include/zuu/captureing/metrics.hpp`
 
 ```cpp
 class YourMetricTracker {

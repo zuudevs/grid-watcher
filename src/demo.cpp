@@ -257,7 +257,7 @@ int main() {
         
         // Configure logging
         auto& logger = g_watcher->getLogger();
-        logger.setMinLevel(monitor::LogEntry::Level::INFO);
+        logger.setMinLevel(capture::LogEntry::Level::INFO);
         
         std::cout << "Starting Grid-Watcher...\n";
         g_watcher->start();

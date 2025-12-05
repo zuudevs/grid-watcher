@@ -58,7 +58,7 @@ grid-watcher/
 │   │   ├── fast_hash.hpp
 │   │   ├── bloom_filter.hpp
 │   │   └── cache_utils.hpp
-│   ├── monitor/
+│   ├── capture/
 │   │   ├── logger.hpp
 │   │   ├── statistics.hpp
 │   │   └── metrics.hpp

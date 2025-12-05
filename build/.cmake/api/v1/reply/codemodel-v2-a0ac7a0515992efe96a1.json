@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "grid_watcher",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "grid_watcher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-grid_watcher-Debug-c7329763f96ec25a856e.json",
+					"name" : "grid_watcher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "grid_watcher_benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-grid_watcher_benchmark-Debug-96446bc236053b52043c.json",
+					"name" : "grid_watcher_benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "grid_watcher_demo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-grid_watcher_demo-Debug-20f73abc459392d59347.json",
+					"name" : "grid_watcher_demo",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Project/grid-watcher/build",
+		"source" : "D:/Project/grid-watcher"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}

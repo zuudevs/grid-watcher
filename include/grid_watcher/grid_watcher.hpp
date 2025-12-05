@@ -10,9 +10,9 @@
 #include "scada/modbus_parser.hpp"
 #include "scada/behavioral_analyzer.hpp"
 #include "scada/mitigation_engine.hpp"
-#include "monitor/logger.hpp"
-#include "monitor/statistics.hpp"
-#include "monitor/metrics.hpp"
+#include "capture/logger.hpp"
+#include "capture/statistics.hpp"
+#include "capture/metrics.hpp"
 #include "performance/bloom_filter.hpp"
 #include "core/ipv4.hpp"
 #include <thread>
@@ -35,9 +35,9 @@ namespace gw::scada {
         MitigationEngine mitigation_;
         
         // Monitoring components
-        std::unique_ptr<monitor::Logger> logger_;
-        monitor::Statistics stats_;
-        monitor::MetricsManager metrics_;
+        std::unique_ptr<capture::Logger> logger_;
+        capture::Statistics stats_;
+        capture::MetricsManager metrics_;
         
         // Fast lookup structures (bloom filters for O(1) checks)
         perf::BloomFilter<8192, 3> blocked_ips_cache_;
@@ -54,7 +54,7 @@ namespace gw::scada {
             : config_(config)
             , analyzer_(config)
             , mitigation_(config)
-            , logger_(std::make_unique<monitor::Logger>(log_file))
+            , logger_(std::make_unique<capture::Logger>(log_file))
         {
             // Initialize bloom filters with whitelisted IPs
             for (const auto& ip : config_.whitelisted_ips) {
@@ -200,7 +200,7 @@ namespace gw::scada {
         // Statistics & Management
         // ====================================================================
         
-        using Statistics = monitor::Statistics::Snapshot;
+        using Statistics = capture::Statistics::Snapshot;
         
         [[nodiscard]] Statistics getStatistics() const noexcept {
             return stats_.getSnapshot();
@@ -208,9 +208,9 @@ namespace gw::scada {
         
         [[nodiscard]] auto getMetrics() const noexcept {
             struct Metrics {
-                monitor::LatencyTracker::Stats packet_latency;
-                monitor::LatencyTracker::Stats threat_latency;
-                monitor::ThroughputTracker::Stats throughput;
+                capture::LatencyTracker::Stats packet_latency;
+                capture::LatencyTracker::Stats threat_latency;
+                capture::ThroughputTracker::Stats throughput;
                 double memory_usage_mb;
             };
             
@@ -251,7 +251,7 @@ namespace gw::scada {
         }
         
         // Logger access
-        monitor::Logger& getLogger() noexcept { return *logger_; }
+        capture::Logger& getLogger() noexcept { return *logger_; }
         
     private:
         // ====================================================================

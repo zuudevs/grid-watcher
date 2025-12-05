@@ -388,7 +388,7 @@ for (const auto& block : blocked) {
 auto& logger = watcher.getLogger();
 
 // Set minimum log level
-logger.setMinLevel(gw::monitoring::LogEntry::Level::DEBUG);
+logger.setMinLevel(gw::captureing::LogEntry::Level::DEBUG);
 
 // Disable console output (file only)
 logger.setConsoleOutput(false);

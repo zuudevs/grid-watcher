@@ -486,7 +486,7 @@ config.port_scan_threshold = 20;
 
 ```cpp
 auto& logger = watcher.getLogger();
-logger.setMinLevel(gw::monitor::LogEntry::Level::INFO);
+logger.setMinLevel(gw::capture::LogEntry::Level::INFO);
 logger.setConsoleOutput(false); // File only in production
 ```
 

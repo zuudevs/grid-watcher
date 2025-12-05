@@ -1,14 +1,7 @@
 D:/Project/grid-watcher/build/CMakeFiles/grid_watcher_demo.dir
 D:/Project/grid-watcher/build/CMakeFiles/grid_watcher.dir
 D:/Project/grid-watcher/build/CMakeFiles/grid_watcher_benchmark.dir
-D:/Project/grid-watcher/build/CMakeFiles/benchmark.dir
-D:/Project/grid-watcher/build/CMakeFiles/memcheck.dir
-D:/Project/grid-watcher/build/CMakeFiles/callgrind.dir
-D:/Project/grid-watcher/build/CMakeFiles/cachegrind.dir
 D:/Project/grid-watcher/build/CMakeFiles/package.dir
 D:/Project/grid-watcher/build/CMakeFiles/package_source.dir
 D:/Project/grid-watcher/build/CMakeFiles/edit_cache.dir
 D:/Project/grid-watcher/build/CMakeFiles/rebuild_cache.dir
-D:/Project/grid-watcher/build/CMakeFiles/list_install_components.dir
-D:/Project/grid-watcher/build/CMakeFiles/install.dir
-D:/Project/grid-watcher/build/CMakeFiles/install/local.dir
